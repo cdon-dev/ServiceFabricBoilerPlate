@@ -14,14 +14,14 @@ namespace CommunicationListener.EventHubs
 {
 	public class EventhubsCommunicationListener : ICommunicationListener
 	{
-		private readonly EventHubFabricReceiverConfiguration _config;
-		private readonly ILogger _logger;
-		private readonly IServicePartition _servicePartition;
-		private readonly IReliableStateManager _stateManager;
-		private readonly TelemetryClient _telemetryClient;
-		private EventHubClient _eventHubClient;
-		private bool _initialized;
-		private IReliableDictionary<string, string> _offsetDictionary;
+		readonly EventHubFabricReceiverConfiguration _config;
+		readonly ILogger _logger;
+		readonly IServicePartition _servicePartition;
+		readonly IReliableStateManager _stateManager;
+		readonly TelemetryClient _telemetryClient;
+		EventHubClient _eventHubClient;
+		bool _initialized;
+		IReliableDictionary<string, string> _offsetDictionary;
 
 		private Lazy<Task<PartitionReceiver>> _partitionReceiverFactory;
 

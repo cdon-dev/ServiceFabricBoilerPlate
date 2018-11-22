@@ -16,7 +16,6 @@ namespace CommunicationListener.EventHubs
 {
 	public static class Extensions
 	{
-
 		public static async Task<PartitionReceiver> CreateServiceFabricReceiverAsync(
 				 this EventHubClient eventHubClient,
 				 IReliableStateManager stateManager,
