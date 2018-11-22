@@ -7,6 +7,8 @@ Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "ServiceFabric", "ServiceFab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{8E25F787-55F8-4B4C-878D-694321E3F58D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{6E8C3746-61C9-4720-A26E-6E7E9BFFEE37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{8E25F787-55F8-4B4C-878D-694321E3F58D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E25F787-55F8-4B4C-878D-694321E3F58D}.Release|x64.ActiveCfg = Release|Any CPU
 		{8E25F787-55F8-4B4C-878D-694321E3F58D}.Release|x64.Build.0 = Release|Any CPU
+		{6E8C3746-61C9-4720-A26E-6E7E9BFFEE37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E8C3746-61C9-4720-A26E-6E7E9BFFEE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E8C3746-61C9-4720-A26E-6E7E9BFFEE37}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6E8C3746-61C9-4720-A26E-6E7E9BFFEE37}.Debug|x64.Build.0 = Debug|Any CPU
+		{6E8C3746-61C9-4720-A26E-6E7E9BFFEE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E8C3746-61C9-4720-A26E-6E7E9BFFEE37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E8C3746-61C9-4720-A26E-6E7E9BFFEE37}.Release|x64.ActiveCfg = Release|Any CPU
+		{6E8C3746-61C9-4720-A26E-6E7E9BFFEE37}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
