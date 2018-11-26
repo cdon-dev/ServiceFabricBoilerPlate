@@ -36,14 +36,16 @@ namespace Common
 		}
 
 		public static async Task WhileAsync(
-			Func<CancellationToken, Task> f, string functionName, CancellationToken cancellationToken, ILogger logger)
+			Func<CancellationToken, Task> f, string functionName, CancellationToken cancellationToken, ILogger logger, int retryDelaySeconds = 60)
 		{
 			logger.LogInformation($"Run {functionName}");
+			var exceptionRetryDelay = TimeSpan.FromSeconds(retryDelaySeconds);
 
 			while (true)
 			{
 				cancellationToken.ThrowIfCancellationRequested();
 
+				var retryDelay = TimeSpan.Zero;
 				try
 				{
 					await f(cancellationToken);
@@ -57,6 +59,7 @@ namespace Common
 				catch (FabricTransientException e)
 				{
 					logger.LogInformation(e, $"FabricTransientException in {functionName}");
+					retryDelay = exceptionRetryDelay;
 				}
 				catch (FabricNotPrimaryException e)
 				{
@@ -71,7 +74,10 @@ namespace Common
 				catch (Exception e)
 				{
 					logger.LogError(e, $"Application Exception in {functionName}");
+					retryDelay = exceptionRetryDelay;
 				}
+
+				await Task.Delay(retryDelay, cancellationToken);
 			}
 		}
 
