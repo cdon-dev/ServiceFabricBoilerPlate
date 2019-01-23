@@ -1,0 +1,11 @@
+[*]
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+
+[*.cs]
+trim_trailing_whitespace=true
+insert_final_newline = false
+
+[*.{md,markdown,json,js,csproj,fsproj,targets,xml}]
+indent_size = 2

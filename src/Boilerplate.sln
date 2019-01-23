@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{6E8C3746-61C9-4720-A26E-6E7E9BFFEE37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunicationListener.EventHubs", "CommunicationListener.EventHubs\CommunicationListener.EventHubs.csproj", "{9071395A-E013-4DDF-A757-FF083A68D80E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunicationListener.EventHubs", "CommunicationListener.EventHubs\CommunicationListener.EventHubs.csproj", "{9071395A-E013-4DDF-A757-FF083A68D80E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "Configuration\Configuration.csproj", "{1E52A077-6DCC-48F9-B232-1148F9BBD744}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,14 @@ Global
 		{9071395A-E013-4DDF-A757-FF083A68D80E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9071395A-E013-4DDF-A757-FF083A68D80E}.Release|x64.ActiveCfg = Release|Any CPU
 		{9071395A-E013-4DDF-A757-FF083A68D80E}.Release|x64.Build.0 = Release|Any CPU
+		{1E52A077-6DCC-48F9-B232-1148F9BBD744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E52A077-6DCC-48F9-B232-1148F9BBD744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E52A077-6DCC-48F9-B232-1148F9BBD744}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1E52A077-6DCC-48F9-B232-1148F9BBD744}.Debug|x64.Build.0 = Debug|Any CPU
+		{1E52A077-6DCC-48F9-B232-1148F9BBD744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E52A077-6DCC-48F9-B232-1148F9BBD744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E52A077-6DCC-48F9-B232-1148F9BBD744}.Release|x64.ActiveCfg = Release|Any CPU
+		{1E52A077-6DCC-48F9-B232-1148F9BBD744}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
