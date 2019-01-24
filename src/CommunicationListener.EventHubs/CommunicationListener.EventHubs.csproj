@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyName>Boilerplate.CommunicationListener.EventHubs</AssemblyName>
+    <RootNamespace>Boilerplate.CommunicationListener.EventHubs</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

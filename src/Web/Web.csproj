@@ -6,8 +6,8 @@
     <ServerGarbageCollection>True</ServerGarbageCollection>
     <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
     <TargetLatestRuntimePatch>False</TargetLatestRuntimePatch>
-    <RootNamespace>Web</RootNamespace>
-    <AssemblyName>Web</AssemblyName>
+    <AssemblyName>Boilerplate.Web</AssemblyName>
+    <RootNamespace>Boilerplate.Web</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
