@@ -17,11 +17,23 @@ namespace Common
 				await f(cancellationToken);
 				cancellationToken.ThrowIfCancellationRequested();
 			}
-			catch (OperationCanceledException e)
-			{
-				logger.LogError(e, "RunAsync canceled");
-				throw;
-			}
+            catch (Exception e) when (cancellationToken.IsCancellationRequested)
+            {
+                if (e is OperationCanceledException)
+                {
+                    logger.LogInformation(e, "RunAsync Canceled");
+                    throw;
+                }
+
+                if (IsCancellation(e))
+                {
+                    logger.LogWarning(e, "RunAsync Canceled");
+                    cancellationToken.ThrowIfCancellationRequested();
+                }
+
+                logger.LogError(e, "Exception during shutdown. Exception of unexpected type");
+                cancellationToken.ThrowIfCancellationRequested();
+            }
 			catch (Exception e) when (IsCancellation(e))
 			{
 				logger.LogError(e, "Cancellation Exception");
@@ -51,7 +63,24 @@ namespace Common
 					await f(cancellationToken);
 					cancellationToken.ThrowIfCancellationRequested();
 				}
-				catch (Exception e) when (IsCancellation(e))
+                catch (Exception e) when (cancellationToken.IsCancellationRequested)
+                {
+                    if (e is OperationCanceledException)
+                    {
+                        logger.LogInformation(e, "RunAsync Canceled");
+                        throw;
+                    }
+
+                    if (IsCancellation(e))
+                    {
+                        logger.LogWarning(e, "RunAsync Canceled");
+                        cancellationToken.ThrowIfCancellationRequested();
+                    }
+
+                    logger.LogError(e, "Exception during shutdown. Exception of unexpected type");
+                    cancellationToken.ThrowIfCancellationRequested();
+                }
+                catch (Exception e) when (IsCancellation(e))
 				{
 					logger.LogInformation(e, $"Cancellation Exception in {functionName}");
 					cancellationToken.ThrowIfCancellationRequested();
